@@ -15,6 +15,11 @@
 
 *Note:* the forking is important because then we know what you did for homework and we can also comment it if needed.
 
+## Project goal
+- create a table with employees
+- create simple login/registration
+- show hide table information based on user is logged in or not
+
 ## What should help you in lexical knowledge?
 - presentations:
     - HTML+CSS basics: https://1drv.ms/p/s!ApfAMuMbRnyEohguY3DFs1HvN9tM?e=UXRmQw
