@@ -1,12 +1,5 @@
 # react-store-app
 
-## What we will use?
-- We will create a mobx global/rootStore which will contain individual stores
-- React context for make acceasable our store from anywhere in application, with useContext hooks
-- TypeScript and declare types everywhere
-- Material UI for fast and cool components
-- makeStyles from material for component styling
-
 ## What should i do?
 - fork this repository (top - right corner, after **unwatch** and **star**)
 - (git) clone your forked repository to your pc
@@ -16,9 +9,12 @@
 *Note:* the forking is important because then we know what you did for homework and we can also comment it if needed.
 
 ## Project goal
-- create a table with employees
-- create simple login/registration
-- show hide table information based on user is logged in or not
+- main
+    - create a dynamic grid list with users, step by step we convert a static grid list into dynamic one
+    - we split the logic and view
+- bonus
+    - add mobx store and few material ui component if we have time
+    - show company names for each user card and design the company card
 
 ## What should help you in lexical knowledge?
 - presentations:
