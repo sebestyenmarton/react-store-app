@@ -1,18 +1,18 @@
 import { action, makeObservable, observable } from "mobx";
 
-export abstract class BaseService {
-    endpoint: string = '';
+export abstract class BaseStore<T extends { id?: string }> {
+    public endpoint: string = '';
 
-    items: any[] = [];
-    setItems(items: any[]) { this.items = items; }
+    public items: T[] = [];
+    public setItems(items: T[]) { this.items = items; }
 
-    async getList(): Promise<any[]> {
+    public async getList(): Promise<T[]> {
         const result = await fetch(this.endpoint);
         const items = await result.json();
         return items;
     }
 
-    async create(data: any): Promise<any> {
+    public async create(data: T): Promise<T> {
         try {
             const result = await fetch(
                 this.endpoint, {
@@ -23,15 +23,30 @@ export abstract class BaseService {
             );
             const user = await result.json();
             this.setItems([ user, ...this.items ]);
-            // this.setNewAvatarUrl('');
-            // this.setNewUserName('');
             return user;
         } catch(err) {
             console.error(err);
         }
     }
 
-    onDelete = async (id: string): Promise<void> => {
+    public async update(data: T): Promise<T> {
+        try {
+            const result = await fetch(
+                `${this.endpoint}/${data.id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                }
+            );
+            const user = await result.json();
+            this.setItems([ user, ...this.items ]);
+            return user;
+        } catch(err) {
+            console.error(err);
+        }
+    }
+
+    public onDelete = async (id: string): Promise<void> => {
         try {
             const result = await fetch(
                 `${this.endpoint}/${id}`, {

@@ -24,3 +24,7 @@ html, body {
     border: 1px solid #000;
     padding: 16px;
 }
+
+.grid-item img {
+    max-width: 160px;
+}

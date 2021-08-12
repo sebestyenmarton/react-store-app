@@ -1,40 +1,40 @@
+import { Button } from '@material-ui/core';
 import { observer } from 'mobx-react-lite';
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
 import './App.css';
-import { User } from './User';
-import { UserCard } from './UserCard';
-import { UserList } from './UserList';
-import { UserService } from './UserService';
+import { CompanyCardList } from './components/CompanyCardList';
+import { UserCardList } from './components/UserCardList';
+import { RootStore } from './stores/RootStore';
 
 // users endpoint:     https://60fd9bcc1fa9e90017c70f18.mockapi.io/api/users
 // company endpoint:   https://60fd9bcc1fa9e90017c70f18.mockapi.io/api/companies
 
 function App() {
-  const userService = React.useMemo(() => new UserService(), []);
-  const { 
-    userNameSearch, 
-    onSearch,
-    newAvatarUrl,
-    newUserName,
-    onAddUser, 
-    items,
-    search,
-    onNewUserNameChange,
-    onNewAvatarChange,
-    onDelete
-  } = userService;
+  const rootStore = React.useMemo(() => new RootStore(), []);
+  const { userStore, companyStore } = rootStore;
+
+  const [page, setPage] = React.useState('user');
 
   return (
     <div>
-      <input placeholder='Search...' value={userNameSearch} onChange={onSearch}></input>
       <div>
-        <input placeholder='Avatar Url' value={newAvatarUrl} onChange={onNewAvatarChange}></input>
-        <input placeholder='User Name' value={newUserName} onChange={onNewUserNameChange}></input>
-        <button onClick={onAddUser}>Add</button>
+        <Button 
+          variant="contained" 
+          color="primary" 
+          onClick={() => setPage('user')}
+        > 
+          Users {userStore.filteredItems.length} 
+        </Button>
+        <Button 
+          variant="contained" 
+          color="primary" 
+          onClick={() => setPage('company')}
+        > 
+          Company {companyStore.filteredItems.length} 
+        </Button>
       </div>
-      <UserList userList={items} onDelete={onDelete} search={search} />
+      {page === 'user' && <UserCardList store={userStore} />}
+      {page === 'company' && <CompanyCardList store={companyStore} />}
     </div>
   );
 }
