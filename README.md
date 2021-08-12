@@ -17,6 +17,11 @@
     - show company names for each user card and design the company card
 
 ## What should help you in lexical knowledge?
+- recorded videos:
+    - part 1/3 - https://youtu.be/qXik_QncnT0
+    - part 2/3 - https://youtu.be/ng6QbvAq3fc
+    - part 3/3 - https://youtu.be/e6nz4oj8L00
+
 - presentations:
     - HTML+CSS basics: https://1drv.ms/p/s!ApfAMuMbRnyEohguY3DFs1HvN9tM?e=UXRmQw
     - JavaScript basic: https://1drv.ms/p/s!ApfAMuMbRnyEohRAC15WlPdqJdk3?e=TW6qiu
