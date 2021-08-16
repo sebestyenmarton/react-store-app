@@ -12,24 +12,15 @@ import { RootStore } from './stores/RootStore';
 function App() {
   const rootStore = React.useMemo(() => new RootStore(), []);
   const { userStore, companyStore } = rootStore;
-
   const [page, setPage] = React.useState('user');
 
   return (
     <div>
       <div>
-        <Button 
-          variant="contained" 
-          color="primary" 
-          onClick={() => setPage('user')}
-        > 
+        <Button variant="contained" color="primary" onClick={() => setPage('user')}> 
           Users {userStore.filteredItems.length} 
         </Button>
-        <Button 
-          variant="contained" 
-          color="primary" 
-          onClick={() => setPage('company')}
-        > 
+        <Button variant="contained" color="primary" onClick={() => setPage('company')}> 
           Company {companyStore.filteredItems.length} 
         </Button>
       </div>

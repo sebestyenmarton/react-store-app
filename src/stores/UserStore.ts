@@ -45,6 +45,15 @@ export class UserStore extends BaseStore<User> {
         };        
         this.create(newItem);
     }
+
+/*     public onEdit = () => {
+        const settedItem = {
+            avatar: this.newAvatarUrl, 
+            username: this.newUserName,
+            companyId: "1"  
+        };        
+        this.update(settedItem);
+    } */
   
     constructor(rootStore: RootStore) {
         super();
@@ -52,6 +61,8 @@ export class UserStore extends BaseStore<User> {
         makeObservable(this, {
             filteredItems: computed,
             searchTerm: observable,
+            newAvatarUrl: observable,
+            newUserName: observable,
             setSearchTerm: action.bound,
         });
         this.getList().then(users => this.setItems(users));

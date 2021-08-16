@@ -18,7 +18,8 @@ export const UserCardList = observer((props: UserCardListProps) => {
         filteredItems: items,
         onNewUserNameChange,
         onNewAvatarChange,
-        onDelete
+        onDelete,
+        //onEdit
     } = props.store;
 
     return (
@@ -36,6 +37,7 @@ export const UserCardList = observer((props: UserCardListProps) => {
                         item={{ id: item.id, title: item.username, avatar: item.avatar }} 
                         onDelete={onDelete} 
                         key={item.id} 
+                        //onEdit={onEdit}
                     />
                 )}
             />
