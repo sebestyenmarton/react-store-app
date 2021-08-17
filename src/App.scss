@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    html, body {
+        height: 100vw;
+        background-color: rgb(6, 6, 6);
+        background-image: url(./img/background4.jpg);
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-size: cover;
+        position: relative;
+        top: -300px;
+        margin-top: 300px;
+        .page{
+            margin: 25px auto 50px auto;
+            .header{
+                .title{
+                    background: -webkit-linear-gradient(0deg, #ffffff 30%, rgba(0, 245, 233, 1) 95%, );
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-family: 'Monoton', cursive;
+                    font-size: 22px;
+                    word-spacing: 25px;
+                    text-align: center;
+                    @media screen and (max-width: 800px) {
+                        font-size: 18px;
+                    }
+                    @media screen and (max-width: 550px) {
+                        font-size: 15px;
+                        max-width: 300px;
+                        margin: auto;
+                    }
+                    .title1{
+                        position: relative;
+                        left: 250px;
+                        opacity: 0;
+                        animation: mymove 1s 1s ease-out 1 both;
+                        @keyframes mymove{
+                            0%   {opacity: 0; left: 250px;}
+                            100% {opacity: 1; left: 0px;}
+                        }
+                    }
+                    .title2{
+                        position: relative;
+                        left: 400px;
+                        opacity: 0;
+                        animation: mymove 1s 1.3s ease-out 1 both;
+                    }
+                }
+                .nav{
+                    display: flex;
+                    justify-content: center;
+                    background-color: #f4f4f407;
+                    margin-top: 18px;
+                    margin-bottom: 18px;
+                    button{
+                        color: #f4f4f4;
+                        font-weight: 600;
+                        animation: mymove .5s .7s ease-out 1 both;
+                        &:hover{
+                            background-color: #f4f4f415;
+                            color: rgb(153, 238, 234);
+                        }
+                    }
+                }
+            }
+            .contentPage{
+                max-width: 1200px;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .formField{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    .add__formFieldBox{
+                        background: radial-gradient(circle, rgba(0, 245, 233, .03)0%, rgba(170, 118, 118, 0) 70%); 
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        max-height: 300px;
+                        width: 100%;
+                        position: relative;
+                        left: 50px;
+                        animation: mymove .5s 0.1s ease-out 1 both;
+                        @media screen and (max-width: 550px) {
+                            flex-direction: column-reverse;
+                            max-height: 800px;
+                        }
+                        .logo{
+                            max-width: 300px;
+                            max-height: 350px;
+                            margin-right: -100px;    
+                            animation: mymove 1.7s .5s ease-out 1 both;
+          
+                            @media screen and (max-width: 800px) {
+                                max-width: 200px;
+                            }
+                            @media screen and (max-width: 550px) {
+                                height: 200px;
+                                position: relative;
+                                margin-right: 0px;   
+                            }
+                        }
+                        .add__formField{
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+                            padding: 20px;
+                            padding-left: 150px;
+                            background: linear-gradient(90deg, #ffffff00 0%, #ffffff15 30%, rgba(0, 59, 56, 0.7) 100%, );
+                            border-top-right-radius: 25px ;
+                            @media screen and (max-width: 550px) {
+                                padding: 20px;
+                            }
+                            .add__formFieldTitle{
+                                color: #f4f4f4;
+                                margin-bottom: 10px;
+                                font-weight: 700;
+                            }
+                            .labelText{
+                                color: #141414;
+                            }
+                            .input{
+                                background-color: #f4f4f420;
+                                border-top-left-radius: 10px;
+                                border-top-right-radius: 10px;
+                                margin-bottom: 10px;
+                                #filled-textarea{
+                                    color: #fff;
+                                    font-weight: 600;
+                                }
+                            }
+                            button{
+    
+                            }
+                        }
+                    }
+                    .searchContainer{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 30px;
+                        h4{
+                            color: #f4f4f4;
+                            font-weight: 600;
+                            max-width: 100px;
+                            text-align: center;
+                            margin: 0 20px;
+                        }
+                        #search{
+                            max-height: 40px;
+                            color:#f4f4f490;
+                            .searchValue{
+                                color: #f4f4f4;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                .grid-container {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    max-width: 1000px;
+                    .grid-item {
+                        position: relative;
+                        height: 289px;
+                        width: 200px;
+                        display: flex;
+                        flex-direction: column;
+                        margin: 8px;
+                        text-align: center;
+                        border-radius: 12px;
+                        padding: 16px;
+                        background-color: #f4f4f430;
+                        max-height: 300px;
+                        overflow-y: scroll;
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+                        animation: mymove 0.2s .0s ease-out 1 both;
+                        .grid-item__child{
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+                            justify-content: center;
+                            transition: all 0.1s ease-in-out;
+                            &:hover{
+                                scale: 1.05;
+                            }
+                            h2{
+                                color: #f4f4f4;
+                                font-size: 18px;
+                                margin-bottom: 0;
+                                font-weight: 600;
+                                margin-bottom: 10px;
+                            }
+                            p{
+                                color: #d5d5d5;
+                            }
+                        }
+                        img {
+                            max-width: 160px;
+                            border-radius: 5px;
+                        }
+                        .buttons{
+                            padding-top: 0px;
+                            position: absolute;
+                            bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

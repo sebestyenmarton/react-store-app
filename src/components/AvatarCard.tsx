@@ -11,14 +11,14 @@ interface CardItem {
 interface AvatarCardProps {
     item: CardItem;
     onDelete: (id: string) => Promise<void>;
-    /* onEdit: (id: string) => Promise<void>; */
+    onEdit: (id: string) => void; 
 }
 
 export function AvatarCard(props: AvatarCardProps) {
-    const { item, onDelete /* onEdit */ } = props;
+    const { item, onDelete, onEdit } = props;
     return (
         <Card className='grid-item' raised style={{ maxWidth: 200 }}>
-            <CardActionArea>
+            <CardActionArea className='grid-item__child'>
                 { item.avatar && (
                     <CardMedia
                         component='img'
@@ -39,17 +39,13 @@ export function AvatarCard(props: AvatarCardProps) {
                     )}
                 </CardContent>
             </CardActionArea>
-            <CardActions>
-                <Button 
-                    variant="contained" 
-                    color="secondary"
-                    onClick={() => onDelete(item.id)}
-                > Delete </Button>
-                <Button 
-                    variant="contained" 
-                    color="primary"
-                    //onClick={() => onEdit(item.id)}
-                > Edit </Button>
+            <CardActions className="buttons" >
+                <Button  onClick={() => onDelete(item.id)} className="button" variant="contained" > 
+                    Delete 
+                </Button>
+                <Button   onClick={() => onEdit(item.id)}  className="button"  variant="contained" color="primary"> 
+                    Edit 
+                </Button>
             </CardActions>
         </Card>
     );

@@ -39,7 +39,7 @@ export abstract class BaseStore<T extends { id?: string }> {
                 }
             );
             const user = await result.json();
-            this.setItems([ user, ...this.items ]);
+            
             return user;
         } catch(err) {
             console.error(err);

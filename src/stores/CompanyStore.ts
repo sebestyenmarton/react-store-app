@@ -45,13 +45,13 @@ export class CompanyStore extends BaseStore<Company> {
         this.create(newItem);
     }
 
-/*     public onEdit = () => {
+    public onEdit = () => {
         const settedItem = {
             name: this.newCompanyTitle, 
             description: this.newCompanyDescription,
         };        
         this.update(settedItem);
-    }  */
+    }  
 
     constructor(rootStore: RootStore) {
         super();
